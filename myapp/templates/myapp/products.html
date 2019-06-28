@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+
+
+{% block body_block %}
+    <div class="card">
+        {% if prodlist%}
+            <div class="card-header">
+                <h2>List of product</h2>
+            </div>
+            <div class="card-body">
+                <ol>
+                    {% for prod in prodlist %}
+                            <li> <a href="{% url 'myapp:productdetail' prod.pk %}">{{ prod.name }}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% else %}
+            <div class="card-body">
+                <strong>There are no product!</strong>
+            </div>
+        {% endif %}
+
+        <div class="card-footer">
+            <a href="{% url 'myapp:place_order' %}">Place order here</a>
+        </div>
+    </div>
+{% endblock %}

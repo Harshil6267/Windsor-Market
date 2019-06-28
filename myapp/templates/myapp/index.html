@@ -1,0 +1,31 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    <div class="card">
+
+        {% if cat_list %}
+            <div class="card-header">
+                <h2>List of Categories</h2>
+            </div>
+            <div class="card-body">
+                <ol>
+                    {% for cat in cat_list %}
+                        <li> <a href="{% url 'myapp:detail' cat.id %}">{{ cat.name}}</a></li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% else %}
+            <div class="card-header">
+                <strong>There are no available categories!</strong>
+            </div>
+            <div class="card-body">
+
+            </div>
+        {% endif %}
+
+        <div class="card-footer">
+            <h3>Last Log in : {{ last_log }} </h3>
+        </div>
+    </div>
+{% endblock %}

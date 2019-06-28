@@ -1,0 +1,70 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Product details{% endblock %}
+{% block body_block %}
+    <div class="card">
+        <div class="card-header">
+            <h2>{{ product.name }}</h2>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">Category :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.category }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">Price :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.price }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">People Interested :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.intrested }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">Available :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.available }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">Stock :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.stock }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <span style="float:right">Description :</span>
+                </div>
+                <div class="col-md-6">
+                    {{ product.description }}
+                </div>
+            </div>
+            {% if not product.available %}
+                <h2>This Product is not available</h2>
+            {% endif %}
+        </div>
+        <div class="card-footer">
+            <form action="" method="post">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <button type="submit" class="btn btn-primary" value="submit">Submit</button>
+            </form>
+        </div>
+    <div>
+{% endblock %}

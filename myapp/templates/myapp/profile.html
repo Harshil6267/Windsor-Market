@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    {% if client_detail %}
+    <h2>Client Details</h2>
+    <ul>
+        {% for c in client_detail %}
+            <li>Username : {{ c.username }}</li>
+            <li>{{ c.city }}</li>
+            {% if c.profile_image %}
+                <img src="{{ c.profile_image.url }}"/>
+            {% else %}
+                <strong>No Client Image</strong>
+            {% endif %}
+            <li>{{ c.company }}</li>
+            <li>{{ c.shipping_address }}</li>
+            <li>{{ c.city }}</li>
+            <li>{{ c.province }}</li>
+
+        {% endfor %}
+    </ul>
+    {% else %}
+        <strong>No Client Details</strong>
+    {% endif %}
+
+
+{% endblock %}

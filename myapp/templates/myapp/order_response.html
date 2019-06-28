@@ -1,0 +1,9 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}place order!{% endblock %}
+{% block body_block %}
+    {% if msg %}
+        <h2>Notification</h2>
+        <strong>{{ msg }}</strong>
+    {% endif %}
+{% endblock %}

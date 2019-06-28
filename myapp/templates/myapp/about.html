@@ -1,0 +1,37 @@
+
+{% extends 'myapp/base.html' %}
+
+{% block title %}About{% endblock %}
+
+{% block body_block %}
+    <div class="card">
+        <div class="card-header">
+            About Windsor Market
+        </div>
+        <div class="card-body">
+            <div class="wh">
+                <b>
+                   <p>
+                       Windsor Market is one of the biggest stores in Windsor City. It provides around 100+ different brands and varieties.
+                       It consists of varieties such as Furniture, Appliances, Electronics, Home Decor and Flooring.
+                    </p>
+                </br>
+                </b>
+            </div>
+
+
+            <div class="wh">
+            <b>
+                <p> Our motive is to inspire and empower consumers making their lifestyle healthy and comfortable.
+                    We strive the best in everything we do. We act honestly, ethically and honorably.
+                    SERVICES: Our main service is to provide quality and satisfaction to our customers.
+
+                </p>
+                </b>
+            </div>
+        </div>
+        <div class="card-footer">
+            <h2>Total no of visits : {{ about_visits }}</h2>
+        </div>
+    </div>
+{% endblock %}
